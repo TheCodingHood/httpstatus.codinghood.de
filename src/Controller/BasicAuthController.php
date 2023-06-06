@@ -11,7 +11,6 @@ use Symfony\Component\Routing\Annotation\Route;
 class BasicAuthController extends AbstractController
 {
     #[Route('/basic-auth/{username}/{password}')]
-    #[Cache(maxage: 0, mustRevalidate: true )]
     public function indexAction(
         #[ValueResolver('username')]
         string $username,
@@ -35,11 +34,11 @@ class BasicAuthController extends AbstractController
 
         $response = new Response(Response::$statusTexts[Response::HTTP_OK], Response::HTTP_OK);
 
-        $response->setCache([
-            'must_revalidate'  => true,
-            'no_cache'         => true,
-            'no_store'         => true,
-        ]);
+//        $response->setCache([
+//            'must_revalidate'  => true,
+//            'no_cache'         => true,
+//            'no_store'         => true,
+//        ]);
 
         return $response;
     }
