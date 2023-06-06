@@ -23,8 +23,6 @@ class BasicAuthController extends AbstractController
             'no_store'         => true,
         ];
 
-
-        header('Cache-Control: no-cache, must-revalidate, max-age=0');
         $hasSuppliedCredentials = !(empty($_SERVER['PHP_AUTH_USER']) && empty($_SERVER['PHP_AUTH_PW']));
         $isNotAuthenticated = (
             !$hasSuppliedCredentials ||
