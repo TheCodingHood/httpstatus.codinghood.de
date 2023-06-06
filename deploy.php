@@ -170,8 +170,8 @@ task('deploy', [
     'deploy:prepare',
     'deploy:link-dotenv',
     'deploy:vendors',
-    'deploy:yarn-install',
-    'deploy:symfony-encore',
+//    'deploy:yarn-install',
+//    'deploy:symfony-encore',
     'deploy:cache:clear',
     'deploy:publish',
 ]);

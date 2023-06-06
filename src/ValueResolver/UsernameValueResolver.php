@@ -7,11 +7,11 @@ use Symfony\Component\HttpKernel\Attribute\AsTargetedValueResolver;
 use Symfony\Component\HttpKernel\Controller\ValueResolverInterface;
 use Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadata;
 
-#[AsTargetedValueResolver('string')]
-class StatusCodeValueResolver implements ValueResolverInterface
+#[AsTargetedValueResolver('username')]
+class UsernameValueResolver implements ValueResolverInterface
 {
     public function resolve(Request $request, ArgumentMetadata $argument): iterable
     {
-        return [$request->attributes->get('status_code')];
+        return [$request->attributes->get('username')];
     }
 }
