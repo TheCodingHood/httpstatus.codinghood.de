@@ -110,7 +110,7 @@ task('deploy:acl', static function() {
 
 
 task('deploy:opcache:clear', static function() {
-    run('sudo -uwww-data /usr/local/bin/cachetool opcache:reset --fcgi=/run/php/php8.1-fpm-codinghood.sock');
+    run('sudo -uwww-data /usr/local/bin/cachetool opcache:reset --fcgi=/run/php/php8.2-fpm-codinghood.sock');
 })->desc('Flush OpCache and Redis');
 
 
