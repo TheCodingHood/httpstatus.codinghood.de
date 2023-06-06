@@ -18,9 +18,9 @@ class BasicAuthController extends AbstractController
     ): Response
     {
         $cacheConfig = [
-            'must_revalidate'  => true,
-            'no_cache'         => true,
-            'no_store'         => true,
+            'must_revalidate' => true,
+            'no_cache'        => true,
+            'no_store'        => true,
         ];
 
         $hasSuppliedCredentials = !(empty($_SERVER['PHP_AUTH_USER']) && empty($_SERVER['PHP_AUTH_PW']));
@@ -32,7 +32,7 @@ class BasicAuthController extends AbstractController
 
         if ($isNotAuthenticated) {
             $response = new Response(Response::$statusTexts[Response::HTTP_UNAUTHORIZED], Response::HTTP_UNAUTHORIZED, [
-                'WWW-Authenticate' => 'Basic realm="Access denied"'
+                'WWW-Authenticate' => 'Basic realm="Access denied"',
             ]);
 
             $response->setCache($cacheConfig);
